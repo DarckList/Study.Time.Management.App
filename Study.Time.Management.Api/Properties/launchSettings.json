@@ -14,7 +14,10 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "STM_ConnectionStrings": "Server=localhost; User Id=postgres; Password=yourPassword; Database=study_time_management; CommandTimeout=0; Timeout=1024;",
+        "STM_TokenSignKey": "",
+        "STM_PasswordSalt": ""
       }
     },
     "Study.Time.Management.Api": {

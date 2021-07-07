@@ -18,6 +18,10 @@ namespace Study.Time.Management.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((context,builder)=>
+                {
+                    builder.AddEnvironmentVariables("STM_");
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
