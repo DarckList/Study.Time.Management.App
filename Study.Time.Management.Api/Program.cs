@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Study.Time.Management.Api
+namespace Study.Time.Management.API
 {
     public class Program
     {
@@ -18,10 +18,6 @@ namespace Study.Time.Management.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((context,builder)=>
-                {
-                    builder.AddEnvironmentVariables("STM_");
-                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

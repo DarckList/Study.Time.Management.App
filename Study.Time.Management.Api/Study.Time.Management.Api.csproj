@@ -9,4 +9,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Study.Time.Management.Data\Study.Time.Management.Data.csproj" />
+    <ProjectReference Include="..\Study.Time.Management.Migration\Study.Time.Management.Migration.csproj" />
+  </ItemGroup>
+
 </Project>
