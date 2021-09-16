@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Study.Time.Management.Data.Models.DE
+namespace Study.Time.Management.Data
 {
-    public class OtherServiceDE
+    class MyRecordExtension
     {
-        public int Id { get; set; }
-
-
     }
 }

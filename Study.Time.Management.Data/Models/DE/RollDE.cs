@@ -1,5 +1,4 @@
-﻿using Dapper.Contrib.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Study.Time.Management.Data.Models.DE
 {
-    [Table("Roles")]
-    public class RoleDE : BaseEntity
+    public class RollDE
     {
-        [Key]
         public int Id { get; set; }
         public string Role { get; set; }
+        public ICollection<UserDE> Users { get; set; }
 
     }
 }

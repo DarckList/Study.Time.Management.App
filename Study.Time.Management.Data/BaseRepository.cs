@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql;
 
 namespace Study.Time.Management.Data
 {
@@ -19,7 +21,7 @@ namespace Study.Time.Management.Data
 
         protected IDbConnection CreateConnection ()
         {
-            return new SqlConnection(_configuration.GetConnectionString("DefautlConnection"));
+            return new NpgsqlConnection(_configuration.GetConnectionString("DefautlConnection"));
         }
     }
 }
