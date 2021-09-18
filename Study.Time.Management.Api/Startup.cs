@@ -7,12 +7,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Study.Time.Management.API.Middleware;
+using Study.Time.Management.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Study.Time.Management.Api
+namespace Study.Time.Management.API
 {
     public class Startup
     {
@@ -27,9 +29,10 @@ namespace Study.Time.Management.Api
         {
 
             services.AddControllers();
+            services.AddSingleton(new Categories(Configuration.GetSection(Environment.GetEnvironmentVariable("STMDbConnection")).Key));
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Study.Time.Management.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Study.Time.Management.API", Version = "v1" });
             });
             services.AddLogging(loggingBuilder =>
             {
@@ -41,11 +44,14 @@ namespace Study.Time.Management.Api
         {
             if (env.IsDevelopment())
             {
+                //використання міграції аби у дева була завжди актуальна версія (відчуваю що знову не туди встромив)
+                app.UseMigration();
+
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Study.Time.Management.Api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Study.Time.Management.API v1"));
             }
-            
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

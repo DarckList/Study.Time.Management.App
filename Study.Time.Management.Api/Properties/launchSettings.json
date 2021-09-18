@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:59410",
-      "sslPort": 44389
+      "applicationUrl": "http://localhost:42443",
+      "sslPort": 44363
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -14,28 +14,20 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
+        "STMDbConnection": "Server=localhost; User Id=postgres; Password=yourPassword; Database=study_time_management; CommandTimeout=0; Timeout=1024;",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Study.Time.Management.Api": {
+    "Study.Time.Management.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
+        "STMDbConnection": "Server=localhost; User Id=postgres; Password=yourPassword; Database=study_time_management; CommandTimeout=0; Timeout=1024",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": "true",
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
-    },
-    "WSL 2": {
-      "commandName": "WSL2",
-      "launchBrowser": true,
-      "launchUrl": "https://localhost:5001/swagger",
-      "environmentVariables": {
-        "ASPNETCORE_URLS": "https://localhost:5001;http://localhost:5000",
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "distributionName": ""
     }
   }
 }
