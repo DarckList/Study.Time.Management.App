@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,11 +8,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Study.Time.Management.API.Infrastructure;
 using Study.Time.Management.API.Middleware;
 using Study.Time.Management.Data;
+using Study.Time.Management.Queries.Categories.GetCategoryPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Study.Time.Management.API
@@ -27,9 +31,13 @@ namespace Study.Time.Management.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddRepositories();
+            services.AddMediatR(typeof(Startup));
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(typeof(GetCategoryPageQueryHandler).GetTypeInfo().Assembly);
             services.AddControllers();
-            services.AddSingleton(new Categories(Configuration.GetSection(Environment.GetEnvironmentVariable("STMDbConnection")).Key));
+            var connectionString = Configuration.GetSection(Environment.GetEnvironmentVariable("STMDbConnection")).Key;
+            services.AddScoped(ctx=> new StmDbConnection(connectionString));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Study.Time.Management.API", Version = "v1" });
@@ -53,7 +61,7 @@ namespace Study.Time.Management.API
             }
 
             app.UseHttpsRedirection();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();

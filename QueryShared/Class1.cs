@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Study.Time.Management.Queries
+namespace QueryShared
 {
     public class Class1
     {

@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Study.Time.Management.Data\Study.Time.Management.Data.csproj" />
+    <ProjectReference Include="..\Study.Time.Management.Query.Shared\Study.Time.Management.Query.Shared.csproj" />
+  </ItemGroup>
 
 </Project>
