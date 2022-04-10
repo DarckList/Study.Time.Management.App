@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Study.Time.Management.API",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Study.Time.Management.Queries", "Study.Time.Management.Queries\Study.Time.Management.Queries.csproj", "{3D62E376-AE77-408A-8378-6A7A0A7BF418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study.Time.Management.Migration", "Study.Time.Management.Migration\Study.Time.Management.Migration.csproj", "{AE3EFDC2-9DFD-46E6-B2F6-A6ACBAE0F547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Study.Time.Management.Migration", "Study.Time.Management.Migration\Study.Time.Management.Migration.csproj", "{AE3EFDC2-9DFD-46E6-B2F6-A6ACBAE0F547}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Study.Time.Management.Query.Shared", "Study.Time.Management.Query.Shared\Study.Time.Management.Query.Shared.csproj", "{F824C99A-5960-4418-B53D-C35A5EEC196C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study.Time.Management.Commands", "Study.Time.Management.Command\Study.Time.Management.Commands.csproj", "{E35B64CF-1D50-4313-812E-BE3C299952FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study.Time.Management.Domain", "Study.Time.Management.Domain\Study.Time.Management.Domain.csproj", "{8F5B851E-6AEB-4358-864C-1237FCFB9E17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{AE3EFDC2-9DFD-46E6-B2F6-A6ACBAE0F547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE3EFDC2-9DFD-46E6-B2F6-A6ACBAE0F547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE3EFDC2-9DFD-46E6-B2F6-A6ACBAE0F547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F824C99A-5960-4418-B53D-C35A5EEC196C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F824C99A-5960-4418-B53D-C35A5EEC196C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F824C99A-5960-4418-B53D-C35A5EEC196C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F824C99A-5960-4418-B53D-C35A5EEC196C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35B64CF-1D50-4313-812E-BE3C299952FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35B64CF-1D50-4313-812E-BE3C299952FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35B64CF-1D50-4313-812E-BE3C299952FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35B64CF-1D50-4313-812E-BE3C299952FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5B851E-6AEB-4358-864C-1237FCFB9E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5B851E-6AEB-4358-864C-1237FCFB9E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5B851E-6AEB-4358-864C-1237FCFB9E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5B851E-6AEB-4358-864C-1237FCFB9E17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
